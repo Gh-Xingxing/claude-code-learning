@@ -1,0 +1,118 @@
+/* ── Claude Code 品牌色（铜橙 Amber） ── */
+:root {
+  --vp-c-brand-1: #d97706;
+  --vp-c-brand-2: #b45309;
+  --vp-c-brand-3: #f59e0b;
+  --vp-c-brand-soft: rgba(217, 119, 6, 0.14);
+
+  --vp-button-brand-border: transparent;
+  --vp-button-brand-text: #ffffff;
+  --vp-button-brand-bg: var(--vp-c-brand-3);
+  --vp-button-brand-hover-border: transparent;
+  --vp-button-brand-hover-text: #ffffff;
+  --vp-button-brand-hover-bg: var(--vp-c-brand-2);
+  --vp-button-brand-active-border: transparent;
+  --vp-button-brand-active-text: #ffffff;
+  --vp-button-brand-active-bg: var(--vp-c-brand-1);
+
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(
+    135deg,
+    #d97706 0%,
+    #92400e 50%,
+    #b45309 100%
+  );
+  --vp-home-hero-image-background-image: linear-gradient(
+    135deg,
+    rgba(217, 119, 6, 0.15) 0%,
+    rgba(180, 83, 9, 0.15) 100%
+  );
+  --vp-home-hero-image-filter: blur(44px);
+}
+
+.dark {
+  --vp-c-brand-1: #f59e0b;
+  --vp-c-brand-2: #fbbf24;
+  --vp-c-brand-3: #d97706;
+  --vp-c-brand-soft: rgba(245, 158, 11, 0.16);
+}
+
+/* 课程表格表头高亮 */
+.vp-doc table th {
+  background-color: var(--vp-c-brand-soft);
+  font-weight: 600;
+}
+
+/* 阶段导读页的目标提示框 */
+.vp-doc .tip {
+  border-color: var(--vp-c-brand-1);
+}
+
+/* 代码块语言标签 */
+.vp-doc div[class*='language-'] > span.lang {
+  color: var(--vp-c-brand-1);
+}
+
+/* 表格第一列：短标签不被挤换行（修复"文件冲突→文件冲/突"这类问题）*/
+.vp-doc table td:first-child,
+.vp-doc table th:first-child {
+  white-space: nowrap;
+}
+
+/* 例外：第一列是长句子的表（如错误信息速查）仍允许换行 */
+.reference-errors .vp-doc table td:first-child,
+.reference-errors .vp-doc table th:first-child {
+  white-space: normal;
+}
+
+/* medium-zoom：放大层盖过顶部导航与侧栏，避免缩放后被遮挡 */
+.medium-zoom-overlay {
+  z-index: 2000;
+}
+.medium-zoom-image--opened {
+  z-index: 2001;
+}
+
+/* ── 亮暗切换：把默认滑动药丸改成居中图标的小方按钮（区别于对标站）── */
+.VPSwitchAppearance {
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 8px !important;
+  background: var(--vp-c-bg-soft) !important;
+  border: 1px solid var(--vp-c-divider) !important;
+  padding: 0 !important;
+  position: relative !important;
+  transition: border-color 0.2s, background 0.2s !important;
+}
+.VPSwitchAppearance:hover {
+  border-color: var(--vp-c-brand-1) !important;
+  background: var(--vp-c-brand-soft) !important;
+}
+.VPSwitchAppearance .check {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  transform: none !important;          /* 不再左右滑动 */
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.VPSwitchAppearance .check .icon {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: visible !important;
+  border-radius: 0 !important;
+}
+/* 关键：图标其实是 .vpi-sun / .vpi-moon 两个 span（默认 top:3px/left:3px），改成绝对居中 + 放大 */
+.VPSwitchAppearance .check .icon [class^='vpi-'] {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 16px !important;
+  height: 16px !important;
+  color: var(--vp-c-brand-1) !important;
+}

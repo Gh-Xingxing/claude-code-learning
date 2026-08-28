@@ -1,0 +1,20 @@
+{
+  "name": "claude-code-learn",
+  "version": "1.0.0",
+  "description": "Claude Code CLI 学习网站",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "medium-zoom": "^1.1.0"
+  }
+}
